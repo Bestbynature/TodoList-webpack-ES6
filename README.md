@@ -4,7 +4,7 @@
   
   <br/>
 
-  <h3><b>Awesome Books Project</b></h3>
+  <h3><b></b></h3>
 
 </div>
 
