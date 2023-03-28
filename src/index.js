@@ -1,25 +1,36 @@
-import _ from 'lodash';
 import './mystyles.css';
-// import Icon from './Icon.svg'
-// import Data from './data.xml';
-// import Notes from './data.csv';
 
-function component() {
-    const element = document.createElement('div');
-  
-  //  lodash, now imported by this script
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-    element.classList.add('hello')
+const actArray = [
+  {
+    description: 'Wash the dishes',
+    completed: false,
+    index: 1,
+  },
+  {
+    description: 'Clean the dinning',
+    completed: false,
+    index: 2,
+  },
+  {
+    description: 'Do the laundry',
+    completed: false,
+    index: 3,
+  },
+];
 
-//     const myIcon = new Image();
-//     myIcon.src = Icon;
+const allActivities = document.querySelector('.all-activities');
 
-//   element.appendChild(myIcon);
-
-//   console.log(Data);
-//   console.log(Notes);
-  
-    return element;
-  }
-  
-  document.body.appendChild(component());
+const iterator = () => {
+  actArray.forEach((activity) => {
+    const li = document.createElement('li');
+    li.className = 'list-item';
+    li.innerHTML = `<div class="content">
+                        <input type="checkbox" id="${activity.index}" class="check">
+                        <p class="description">${activity.description}</p>
+                        <p class="holder"><i class="fa-solid fa-ellipsis-vertical"></i></p>
+                    </div><br>
+                    <hr>`;
+    allActivities.appendChild(li);
+  });
+};
+iterator();
