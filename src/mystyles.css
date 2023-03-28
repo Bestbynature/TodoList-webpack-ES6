@@ -1,13 +1,112 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: bisque;
+  background-color: bisque;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
 }
 
-.hello {
-    color: crimson;
+.wrapper {
+  padding: 3rem 1rem 3rem 1rem;
+  width: 50%;
+  height: auto;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 1rem 1rem 1rem 0.5rem;
+  color: rgba(56, 53, 53, 0.9);
+}
+
+.todo {
+  width: 100%;
+  height: 3rem;
+  border: none;
+  font-size: 1.5rem;
+}
+
+.todo:focus {
+  border: none;
+  outline: none;
+}
+
+.form {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 0.5rem 1rem 0.5rem 0.5rem;
+  font-size: 1.5rem;
+}
+
+.all-activities {
+  width: 100%;
+  border: 2px solid white;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.list-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 1rem 0 0.5rem;
+  color: rgba(56, 53, 53, 0.9);
+}
+
+.content {
+  display: flex;
+  width: 100%;
+}
+
+hr {
+  width: 100%;
+}
+
+.description {
+  flex-basis: 93%;
+}
+
+.check {
+  margin-right: 0.7rem;
+  flex-basis: 5%;
+}
+
+.fa-ellipsis-vertical {
+  cursor: move;
+}
+
+.clear {
+  background-color: beige;
+  padding: 1.2rem;
+  text-align: center;
+  color: gray;
+  transition: all 0.5s ease-in-out;
+}
+
+.clear:hover {
+  cursor: pointer;
+  box-shadow: 3px 3px 3px 3px;
+}
+
+.fa-beat {
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+@media only screen and (min-width: 375px) and (max-width: 768px) {
+  .wrapper {
+    width: 100%;
+  }
 }
