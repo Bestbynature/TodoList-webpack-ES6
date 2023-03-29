@@ -49,6 +49,34 @@ header {
   font-size: 1.5rem;
 }
 
+.task-pane {
+  display: flex;
+  flex-direction: column;
+  padding: 0.3rem;
+}
+
+.top-left {
+  flex-basis: 95%;
+  display: flex;
+  padding: 0.4rem;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.top-left:hover {
+  box-shadow: 0 0 3px 3px;
+}
+
+.top-right {
+  flex-basis: 5%;
+  text-align: center;
+}
+
+.left-right {
+  display: flex;
+  align-items: center;
+}
+
 .all-activities {
   width: 100%;
   border: 2px solid white;
@@ -57,34 +85,32 @@ header {
   flex-direction: column;
 }
 
-.list-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem 1rem 0 0.5rem;
-  color: rgba(56, 53, 53, 0.9);
-}
-
-.content {
-  display: flex;
-  width: 100%;
-}
-
 hr {
   width: 100%;
 }
 
 .description {
   flex-basis: 93%;
+  display: flex;
+  flex-wrap: wrap;
+  word-wrap: break-word;
 }
 
 .check {
   margin-right: 0.7rem;
-  flex-basis: 5%;
+  flex-basis: 7%;
+  width: 1.3rem;
+  height: 1.3rem;
 }
 
 .fa-ellipsis-vertical {
   cursor: move;
+}
+
+.fa-trash-can {
+  cursor: pointer;
+  display: none;
+  margin-left: 10px;
 }
 
 .clear {
@@ -103,6 +129,13 @@ hr {
 .fa-beat {
   cursor: pointer;
   font-size: 1rem;
+}
+
+.abnormal {
+  display: none;
+  background-color: white;
+  color: red;
+  padding: 0.5rem;
 }
 
 @media only screen and (min-width: 375px) and (max-width: 768px) {
