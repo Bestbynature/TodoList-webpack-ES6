@@ -5,11 +5,14 @@
 }
 
 body {
-  background-color: bisque;
+  background: linear-gradient(45deg, rgb(205, 31, 240), rgb(126, 241, 31));
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: 'Poppins', sans-serif;
+  height: auto;
+  min-height: 100vh;
 }
 
 .wrapper {
