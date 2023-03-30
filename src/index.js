@@ -2,13 +2,16 @@
 import './mystyles.css';
 import { store } from './modules/local-storage.js';
 import { addTask } from './modules/task.js';
+import { update } from './modules/update.js';
+import { deleter } from './modules/delete.js';
 
 const addButton = document.querySelector('.fa-arrow-right-to-bracket');
 export const todo = document.querySelector('.todo');
 export const abnormal = document.querySelector('.abnormal');
 export const domTasks = document.querySelector('.all-activities');
-
 export let tasks = [];
+
+let desc;
 
 export const displayTasks = () => {
   tasks.forEach((task, i) => {
@@ -63,38 +66,12 @@ export const displayTasks = () => {
     });
 
     description.addEventListener('input', () => {
-      const newValue = description.textContent;
-      const test = tasks.some((tester) => {
-        if (tester.description.toLowerCase() === newValue.toLowerCase()) return true;
-        return false;
-      });
-      if (test) {
-        abnormal.style.display = 'block';
-        abnormal.innerHTML = 'Sorry! You can\'t add the same task twice';
-      } else {
-        abnormal.style.display = 'none';
-        task.description = newValue;
-        store();
-      }
+      desc = description.textContent;
+      update(desc, i);
     });
 
     trash.addEventListener('click', () => {
-      if (tasks.length === 1) {
-        tasks = [];
-        store();
-        domTasks.innerHTML = '';
-      } else {
-        const indices = i;
-
-        const newTasks = tasks.filter((elem) => elem.index - 1 !== indices);
-        tasks = newTasks.map((mapped, i) => ({
-          description: `${mapped.description}`,
-          index: `${i + 1}`,
-          completed: false,
-        }));
-        domTasks.innerHTML = '';
-        displayTasks();
-      }
+      deleter(i);
     });
   });
 };
@@ -112,4 +89,14 @@ window.onload = () => {
   } else {
     tasks = [];
   }
+};
+
+export const displayTasksCaller = (gem) => {
+  tasks = gem.map((mapped, i) => ({
+    description: `${mapped.description}`,
+    index: `${i + 1}`,
+    completed: false,
+  }));
+  domTasks.innerHTML = '';
+  displayTasks();
 };
