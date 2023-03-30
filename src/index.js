@@ -4,14 +4,17 @@ import { store } from './modules/local-storage.js';
 import { addTask } from './modules/task.js';
 import { update } from './modules/update.js';
 import { deleter } from './modules/delete.js';
+import { status, clearer } from './modules/check.js';
 
 const addButton = document.querySelector('.fa-arrow-right-to-bracket');
 export const todo = document.querySelector('.todo');
 export const abnormal = document.querySelector('.abnormal');
 export const domTasks = document.querySelector('.all-activities');
+const clear = document.querySelector('.clear');
+
 export let tasks = [];
 
-let desc;
+let desc; let checkBox;
 
 export const displayTasks = () => {
   tasks.forEach((task, i) => {
@@ -73,6 +76,11 @@ export const displayTasks = () => {
     trash.addEventListener('click', () => {
       deleter(i);
     });
+
+    check.addEventListener('change', () => {
+      checkBox = check;
+      status(i, checkBox);
+    });
   });
 };
 
@@ -85,18 +93,29 @@ window.addEventListener('keypress', (event) => {
 window.onload = () => {
   tasks = JSON.parse(localStorage.getItem('tasks'));
   if (tasks) {
+    tasks.forEach((fresh) => {
+      fresh.completed = false;
+    });
     displayTasks();
   } else {
     tasks = [];
   }
 };
 
+clear.addEventListener('click', clearer);
+
 export const displayTasksCaller = (gem) => {
-  tasks = gem.map((mapped, i) => ({
-    description: `${mapped.description}`,
-    index: `${i + 1}`,
-    completed: false,
-  }));
-  domTasks.innerHTML = '';
-  displayTasks();
+  if (gem.length === 0) {
+    tasks = [];
+    store();
+    domTasks.innerHTML = '';
+  } else {
+    tasks = gem.map((mapped, i) => ({
+      description: `${mapped.description}`,
+      index: `${i + 1}`,
+      completed: false,
+    }));
+    domTasks.innerHTML = '';
+    displayTasks();
+  }
 };
