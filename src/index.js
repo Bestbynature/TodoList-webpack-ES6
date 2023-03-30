@@ -30,6 +30,8 @@ export const displayTasks = () => {
     const leftRight = document.createElement('div');
     leftRight.className = 'left-right';
 
+    if (i % 2 === 0) leftRight.classList.add('dark');
+
     const check = document.createElement('input');
     check.className = 'check';
     check.setAttribute('type', 'checkbox');
