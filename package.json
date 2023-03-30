@@ -1,9 +1,7 @@
 {
+  "homepage": "https://Besbynature.github.io/TodoList-webpack-ES6",
   "name": "todolist-webpack-es6",
   "version": "1.0.0",
-  "repository": {
-    "url": "git+https://github.com/Bestbynature/TodoList-webpack-ES6.git"
-  },
   "description": "<a name=\"readme-top\"></a>",
   "private": "true",
   "scripts": {
@@ -11,7 +9,7 @@
     "start": "webpack serve --open",
     "build": "webpack",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "Prince",
