@@ -57,6 +57,7 @@
 - **[Linter checks]**
 - **[Webpack]**
 - **[Add/Remove buttons]**
+- **[clear All completed button]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
