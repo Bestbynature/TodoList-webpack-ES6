@@ -138,6 +138,10 @@ hr {
   padding: 0.5rem;
 }
 
+.dark {
+  background-color: rgba(169, 169, 169, 0.3);
+}
+
 @media only screen and (min-width: 375px) and (max-width: 768px) {
   .wrapper {
     width: 100%;
