@@ -35,7 +35,7 @@
 
 # 📖 [To DO LIst] <a name="about-project"></a>
 
-**[To DO LIst](https://bestbynature.github.io/todolist-webpack-es6/)** is a a basic website that allows users to add and/or remove activities from a list of refistered activities on the website. The Project is achieved by using JavaScript objects and arrays. The project also implemented features that dynamically modify the DOM and add basic events and listeners..
+**[To DO LIst](https://bestbynature.github.io/TodoList-webpack-ES6/)** is a a basic website that allows users to add and/or remove activities from a list of refistered activities on the website. The Project is achieved by using JavaScript objects and arrays. The project also implemented features that dynamically modify the DOM and add basic events and listeners..
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -65,7 +65,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [To DO LIst](https://bestbynature.github.io/todolist-webpack-es6/)
+- [To DO LIst](hhttps://bestbynature.github.io/TodoList-webpack-ES6/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
