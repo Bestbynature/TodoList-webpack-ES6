@@ -65,7 +65,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [To DO LIst](hhttps://bestbynature.github.io/TodoList-webpack-ES6/)
+### **[To-Do-List-App](https://bestbynature.github.io/TodoList-webpack-ES6/)**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -74,6 +74,8 @@
 ## 💻 Getting Started <a name="getting-started"></a>
 
 To get a local copy up and running, follow these steps.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Prerequisites
 
@@ -85,6 +87,8 @@ In order to run this project you need:
     <li>Node Package manager (npm) </li>
     <li>An editor such as Visual Studio Code</li>
   </ul>
+  
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Setup
 
@@ -96,6 +100,8 @@ Clone this repository to your desired folder:
     <li>Update your git identity by running "git config --global user.email "your_email@gmail.com""</li>
     <li>Update your name on git by running "git config --global user.name "your_name"</li>
   </ul>
+  
+  <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Install
 
@@ -117,7 +123,8 @@ Install this project with:
 - Run npx eslint . on the root of your directory of your project
 - Fix linter error.
 
-### Usage
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+### Usage <a name="usage"></a>
 
 To run the project, execute the following command:
 
@@ -127,7 +134,9 @@ To run the project, execute the following command:
   npm run build to get the production version
 ```
 
-### Run tests
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Run tests <a name="run-tests"></a>
 
 To run tests, run the following command:
 
@@ -137,11 +146,16 @@ Run "npx stylelint "**/*.{css,scss} --fix " to fix linters
 Run "npx eslint . --fix to fix linters"
 ```
 
-### Deployment
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Deployment <a name="triangular_flag_on_post-deployment"></a>
 
 You can deploy this project using:
 
 - github pages
+```sh
+- npm run deploy
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
