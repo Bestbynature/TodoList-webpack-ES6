@@ -107,6 +107,7 @@ Clone this repository to your desired folder:
 
 Install this project with:
 
+```sh
 - In the first commit of your feature branch create a .github/workflows folder and add a copy of [.github/workflows/linters.yml](https://github.com/microverseinc/linters-config/blob/master/html-css-js/.github/workflows/linters.yml) to that folder.
 - create a .gitignore file and add 'node_modules' to it
 - run 'npm init -y'
@@ -118,10 +119,11 @@ Install this project with:
 - Copy [stylelintrc.json](https://github.com/microverseinc/linters-config/blob/master/html-css-js/.stylelintrc.json) to the root directory of your project.
 - Run 'npx stylelint "\*_/_.{css,scss}"'
 - fix linter errors
-- run 'npm install --save-dev eslint@7.x eslint-config-airbnb-base@14.x eslint-plugin-import@2.x babel-eslint@10.x'
+- run "npm install --save-dev eslint@7.x eslint-config-airbnb-base@14.x eslint-plugin-import@2.x babel-eslint@10.x"
 - Copy [eslintrc.json](https://github.com/microverseinc/linters-config/tree/master/html-css-js)
 - Run npx eslint . on the root of your directory of your project
 - Fix linter error.
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 ### Usage <a name="usage"></a>
