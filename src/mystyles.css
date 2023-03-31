@@ -5,8 +5,7 @@
 }
 
 body {
-  /* background: linear-gradient(45deg, rgb(205, 31, 240), rgb(126, 241, 31)); */
-  background: linear-gradient(45deg, rgb(151, 148, 148), rgba(212, 210, 210, 0.5), rgba(128, 128, 128, 0.7));
+  background: linear-gradient(45deg, rgba(194, 128, 48, 0.8), rgb(255, 228, 196), rgba(194, 128, 48, 0.8));
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
