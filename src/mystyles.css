@@ -5,7 +5,8 @@
 }
 
 body {
-  background: linear-gradient(45deg, rgb(205, 31, 240), rgb(126, 241, 31));
+  /* background: linear-gradient(45deg, rgb(205, 31, 240), rgb(126, 241, 31)); */
+  background: linear-gradient(45deg, rgb(151, 148, 148), rgba(212, 210, 210, 0.5), rgba(128, 128, 128, 0.7));
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
@@ -117,16 +118,18 @@ hr {
 }
 
 .clear {
-  background-color: beige;
+  background-color: rgba(43, 43, 40, 0.5);
   padding: 1.2rem;
   text-align: center;
-  color: gray;
+  color: rgb(243, 240, 240);
   transition: all 0.5s ease-in-out;
 }
 
 .clear:hover {
   cursor: pointer;
-  box-shadow: 3px 3px 3px 3px;
+  box-shadow: 3px 3px 3px 3px white;
+  filter: invert(100%);
+
 }
 
 .fa-beat {
