@@ -73,6 +73,7 @@ header {
 .top-right {
   flex-basis: 5%;
   text-align: center;
+  cursor: move;
 }
 
 .left-right {
@@ -107,7 +108,11 @@ hr {
 }
 
 .fa-ellipsis-vertical {
-  cursor: move;
+  color: rgb(252, 143, 0);
+}
+
+.fa-ellipsis-vertical:hover {
+  color: rgb(15, 15, 14);
 }
 
 .fa-trash-can {
