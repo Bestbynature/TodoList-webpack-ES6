@@ -5,9 +5,7 @@ import { addTask } from './modules/task.js';
 import { update } from './modules/update.js';
 import { deleter } from './modules/delete.js';
 import { status, clearer } from './modules/check.js';
-import { dragStart } from './modules/dragmodule';
-import { dragOver } from './modules/dragmodule';
-import { drop } from './modules/dragmodule';
+import { dragStart, dragOver, drop } from './modules/dragmodule.js';
 
 const addButton = document.querySelector('.fa-arrow-right-to-bracket');
 export const todo = document.querySelector('.todo');
@@ -23,24 +21,20 @@ export const displayTasks = () => {
   tasks.forEach((task, i) => {
     const taskPane = document.createElement('div');
     taskPane.className = 'task-pane';
-    taskPane.setAttribute('draggable', 'true')
-    taskPane.setAttribute('id', `${task.index}`)
-
+    taskPane.setAttribute('draggable', 'true');
+    taskPane.setAttribute('id', `${task.index}`);
 
     const topLeft = document.createElement('div');
     topLeft.className = 'top-left';
     topLeft.setAttribute('id', `${task.index}`);
 
-
     const topRight = document.createElement('div');
     topRight.className = 'top-right';
     topRight.setAttribute('id', `${task.index}`);
 
-
     const leftRight = document.createElement('div');
     leftRight.className = 'left-right';
     leftRight.setAttribute('id', `${task.index}`);
-
 
     if (i % 2 === 0) leftRight.classList.add('dark');
 
@@ -61,7 +55,6 @@ export const displayTasks = () => {
     const anchor = document.createElement('i');
     anchor.className = 'fa-solid fa-ellipsis-vertical';
     anchor.setAttribute('id', `${task.index}`);
-
 
     topLeft.append(check, description, trash);
     topRight.appendChild(anchor);
@@ -99,17 +92,17 @@ export const displayTasks = () => {
       status(i, checkBox);
     });
 
-    taskPane.addEventListener('dragstart', (event)=>{
-      dragStart(event)
-    })
+    taskPane.addEventListener('dragstart', (event) => {
+      dragStart(event);
+    });
 
-    taskPane.addEventListener('dragover', (ev)=>{
-      dragOver(ev)
-    })
+    taskPane.addEventListener('dragover', (ev) => {
+      dragOver(ev);
+    });
 
-    taskPane.addEventListener('drop', (eve)=>{
-      drop(eve)
-    })
+    taskPane.addEventListener('drop', (eve) => {
+      drop(eve);
+    });
   });
 };
 
