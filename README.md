@@ -12,24 +12,26 @@
 
 # 📗 Table of Contents
 
-- [📖 About the Project](#about-project)
-  - [🛠 Built With](#built-with)
-    - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
-- [💻 Getting Started](#getting-started)
-  - [Setup](#setup)
-  - [Prerequisites](#prerequisites)
-  - [Install](#install)
-  - [Usage](#usage)
-  - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
-- [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [📝 License](#license)
+- [📗 Table of Contents](#-table-of-contents)
+- [📖 \[To DO LIst\] ](#-to-do-list-)
+  - [🛠 Built With ](#-built-with-)
+    - [Tech Stack ](#tech-stack-)
+    - [Key Features ](#key-features-)
+  - [🚀 Live Demo ](#-live-demo-)
+    - [**To-Do-List-App**](#to-do-list-app)
+  - [💻 Getting Started ](#-getting-started-)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Install](#install)
+    - [Usage ](#usage-)
+    - [Run tests ](#run-tests-)
+    - [Deployment ](#deployment-)
+  - [👥 Authors ](#-authors-)
+  - [🔭 Future Features ](#-future-features-)
+  - [🤝 Contributing ](#-contributing-)
+  - [⭐️ Show your support ](#️-show-your-support-)
+  - [🙏 Acknowledgments ](#-acknowledgments-)
+  - [📝 License ](#-license-)
 
 <!-- PROJECT DESCRIPTION -->
 
@@ -123,6 +125,20 @@ Install this project with:
 - Copy [eslintrc.json](https://github.com/microverseinc/linters-config/tree/master/html-css-js)
 - Run npx eslint . on the root of your directory of your project
 - Fix linter error.
+
+### To Install Jest
+- run npm install --save-dev jest
+- add " "test": "jest", "watch": "jest --watch *.js" to the scripts section of package.json"
+- run npm install --save-dev @babel/plugin-transform-modules-commonjs
+- create a file at the root called .babelrc
+- copy `{
+    "env": {
+        "test": {
+            "plugins": ["@babel/plugin-transform-modules-commonjs"]
+        }
+    }
+}` inside the file
+
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
