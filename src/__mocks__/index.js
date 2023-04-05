@@ -21,5 +21,3 @@ class Updater{
     }
 }
 
-const updateTask = new Updater
-exports.updateTask = updateTask
