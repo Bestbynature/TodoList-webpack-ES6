@@ -151,6 +151,11 @@ hr {
   background-color: rgba(169, 169, 169, 0.3);
 }
 
+.text {
+  text-decoration: line-through;
+  background-color: rgb(253, 179, 170);
+}
+
 @media only screen and (min-width: 375px) and (max-width: 768px) {
   .wrapper {
     width: 100%;

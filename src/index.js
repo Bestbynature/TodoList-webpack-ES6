@@ -18,6 +18,7 @@ export let tasks = [];
 let desc; let checkBox;
 
 export const displayTasks = () => {
+  // console.log(checker)
   tasks.forEach((task, i) => {
     const taskPane = document.createElement('div');
     taskPane.className = 'task-pane';
@@ -48,6 +49,11 @@ export const displayTasks = () => {
     description.className = 'description';
     description.setAttribute('id', `${task.index}`);
     description.setAttribute('contenteditable', 'true');
+
+    if (task.completed === true) {
+      check.setAttribute('checked', 'true');
+      description.classList.add('text');
+    }
 
     const trash = document.createElement('i');
     trash.className = 'fa-solid fa-trash-can fa-beat';
@@ -126,8 +132,12 @@ window.onload = () => {
 
 clear.addEventListener('click', clearer);
 
-export const displayTasksCaller = (gem) => {
-  if (gem.length === 0) {
+export const displayTasksCaller = (gem, linedeco) => {
+  if (linedeco >= 0) {
+    tasks = [...gem];
+    domTasks.innerHTML = '';
+    displayTasks();
+  } else if (gem.length === 0) {
     tasks = [];
     store();
     domTasks.innerHTML = '';

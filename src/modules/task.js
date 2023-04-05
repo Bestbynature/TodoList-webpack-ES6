@@ -15,8 +15,14 @@ const addTask = () => {
       abnormal.innerHTML = 'Sorry! You can\'t add the same task twice';
     } else {
       abnormal.style.display = 'none';
+      let newText = todo.value;
+      const firstPart = newText.trim().split('').slice(0, 1).join('')
+        .toUpperCase();
+      const secondPart = newText.trim().split('').slice(1).join('')
+        .toLowerCase();
+      newText = firstPart.concat(secondPart);
       const task = {
-        description: todo.value,
+        description: newText,
         index: tasks.length + 1,
         completed: false,
       };

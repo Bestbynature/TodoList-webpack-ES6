@@ -3,12 +3,9 @@ import { displayTasksCaller, tasks, domTasks } from '../index.js';
 import { store } from './local-storage.js';
 
 export const status = (index, a) => {
-  if (a.checked) {
-    tasks[index].completed = true;
-  } else {
-    tasks[index].completed = false;
-  }
-  store();
+  if (a.checked) tasks[index].completed = true;
+  else tasks[index].completed = false;
+  displayTasksCaller(tasks, index);
 };
 
 export const clearer = () => {
