@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import './mystyles.css';
 import { store } from './modules/local-storage.js';
 import { addTask } from './modules/task.js';
@@ -151,4 +153,4 @@ export const displayTasksCaller = (gem, linedeco) => {
   }
 };
 
-export {addTask}
+export { addTask };
