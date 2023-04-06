@@ -4,7 +4,6 @@ let tasks = [];
 class Updater {
 
   addTask(todo) {
-    // let tasks = []
     tasks.push(todo);
     return tasks;
   }
@@ -24,7 +23,7 @@ class Edupclear{
   update = (item) => {
     tasks = [{   index: 1,
       description: 'going to the restaurant',
-      completed: false}]
+      completed: false}];
       tasks[0].description = item;
       return tasks
   }
