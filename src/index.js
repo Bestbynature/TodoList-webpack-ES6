@@ -13,13 +13,16 @@ export const todo = document.querySelector('.todo');
 export const abnormal = document.querySelector('.abnormal');
 export const domTasks = document.querySelector('.all-activities');
 const clear = document.querySelector('.clear');
+const length = document.querySelector('header>p')
 
 export let tasks = [];
-
 let desc; let checkBox;
+const maximum = 10
+
 
 export const displayTasks = () => {
-  // console.log(checker)
+  length.innerHTML = '',
+  length.innerHTML += `<span> ${tasks.length} of ${maximum} </span><meter optimum="${Math.floor(0.5*maximum)}" high="${Math.floor(0.7*maximum)}" max="${maximum}" value="${tasks.length}"></meter>`;
   tasks.forEach((task, i) => {
     const taskPane = document.createElement('div');
     taskPane.className = 'task-pane';
