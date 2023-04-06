@@ -48,3 +48,8 @@ class Edupclear{
   }
 }
 
+const updateTask = new Updater;
+const edupclear = new Edupclear;
+exports.updateTask = updateTask;
+exports.edupclear = edupclear;
+
