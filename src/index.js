@@ -21,7 +21,7 @@ const maximum = 10
 
 
 export const displayTasks = () => {
-  length.innerHTML = '',
+  length.innerHTML = '';
   length.innerHTML += `<span> ${tasks.length} of ${maximum} </span><meter optimum="${Math.floor(0.5*maximum)}" high="${Math.floor(0.7*maximum)}" max="${maximum}" value="${tasks.length}"></meter>`;
   tasks.forEach((task, i) => {
     const taskPane = document.createElement('div');
