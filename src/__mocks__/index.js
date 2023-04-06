@@ -1,5 +1,5 @@
 /*eslint-disable*/
-const tasks = [];
+let tasks = [];
 
 class Updater {
 
@@ -19,5 +19,32 @@ class Updater {
   }
 }
 
-const updateTask = new Updater();
-exports.updateTask = updateTask;
+class Edupclear{
+
+  update = (item) => {
+    tasks = [{   index: 1,
+      description: 'going to the restaurant',
+      completed: false}]
+      tasks[0].description = item;
+      return tasks
+  }
+
+  status = (index) => {
+    tasks[index].completed = true;
+    return tasks;
+  };
+
+  clearer = () => {
+    if (tasks.length === 0) return;
+    if (tasks.length === 1) {
+      if (tasks[0].completed === true) {
+        tasks.pop();
+        return tasks
+      }
+    } else {
+      const filtered = tasks.filter((verify) => verify.completed === false);
+      return filtered
+    }
+  }
+}
+
