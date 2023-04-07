@@ -7,6 +7,7 @@ import { update } from './modules/update.js';
 import { deleter } from './modules/delete.js';
 import { status, clearer } from './modules/check.js';
 import { dragStart, dragOver, drop } from './modules/dragmodule.js';
+import { maximum } from './logic';
 
 const addButton = document.querySelector('.fa-arrow-right-to-bracket');
 export const todo = document.querySelector('.todo');
@@ -17,12 +18,12 @@ const length = document.querySelector('header>p')
 
 export let tasks = [];
 let desc; let checkBox;
-const maximum = 10
-
+// const maximum = 10
 
 export const displayTasks = () => {
+  let maxima = maximum(tasks.length)
   length.innerHTML = '';
-  length.innerHTML += `<span> ${tasks.length} of ${maximum} slots </span><meter optimum="${Math.floor(0.5*maximum)}" high="${Math.floor(0.7*maximum)}" max="${maximum}" value="${tasks.length}"></meter>`;
+  length.innerHTML += `<span> ${tasks.length} of ${maxima} slots </span><meter optimum="${Math.floor(0.5*maxima)}" high="${Math.floor(0.7*maxima)}" max="${maxima}" value="${tasks.length}"></meter>`;
   tasks.forEach((task, i) => {
     const taskPane = document.createElement('div');
     taskPane.className = 'task-pane';
