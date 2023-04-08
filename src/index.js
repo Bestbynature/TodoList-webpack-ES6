@@ -1,10 +1,10 @@
 /* eslint-disable */
 
 import './mystyles.css';
-import { store } from './modules/local-storage.js';
+import store from './modules/local-storage.js';
 import { addTask } from './modules/task.js';
-import { update } from './modules/update.js';
-import { deleter } from './modules/delete.js';
+import update from './modules/update.js';
+import deleter  from './modules/delete.js';
 import { status, clearer } from './modules/check.js';
 import { dragStart, dragOver, drop } from './modules/dragmodule.js';
 import maximum from './logic';
@@ -14,15 +14,19 @@ export const todo = document.querySelector('.todo');
 export const abnormal = document.querySelector('.abnormal');
 export const domTasks = document.querySelector('.all-activities');
 const clear = document.querySelector('.clear');
-const length = document.querySelector('header>p')
+const slot = document.querySelector('header>p')
 
 export let tasks = [];
 let desc; let checkBox;
 
-export const displayTasks = () => {
+export const slotFunction = () => {
   let maxima = maximum(tasks.length)
-  length.innerHTML = '';
-  length.innerHTML += `<span> ${tasks.length} of ${maxima} slots </span><meter optimum="${Math.floor(0.5*maxima)}" high="${Math.floor(0.7*maxima)}" max="${maxima}" value="${tasks.length}"></meter>`;
+  slot.innerHTML = '';
+  slot.innerHTML += `<span> ${tasks.length} of ${maxima} slots </span><meter optimum="${Math.floor(0.5*maxima)}" high="${Math.floor(0.7*maxima)}" max="${maxima}" value="${tasks.length}"></meter>`;
+}
+
+export const displayTasks = () => {
+  slotFunction()
   tasks.forEach((task, i) => {
     const taskPane = document.createElement('div');
     taskPane.className = 'task-pane';

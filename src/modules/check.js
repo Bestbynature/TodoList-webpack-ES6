@@ -1,6 +1,8 @@
 /* eslint-disable  import/no-cycle */
-import { displayTasksCaller, tasks, domTasks } from '../index.js';
-import { store } from './local-storage.js';
+import {
+  displayTasksCaller, tasks, domTasks, slotFunction,
+} from '../index.js';
+import store from './local-storage.js';
 
 export const status = (index, a) => {
   if (a.checked) tasks[index].completed = true;
@@ -14,6 +16,7 @@ export const clearer = () => {
     if (tasks[0].completed === true) {
       tasks.pop();
       store();
+      slotFunction();
       domTasks.innerHTML = '';
     }
   } else {
