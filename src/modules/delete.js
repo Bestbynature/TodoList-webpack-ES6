@@ -10,7 +10,8 @@ const deleter = (a) => {
     tasks.pop();
     store();
     slotFunction();
-    domTasks.innerHTML = '';
+    domTasks.innerHTML = 'No tasks to display at the moment. Please add some tasks...';
+    domTasks.classList.add('task-less')
   } else {
     const newTasks = tasks.filter((elem) => elem.index - 1 !== a);
     displayTasksCaller(newTasks);

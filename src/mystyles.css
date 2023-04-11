@@ -156,6 +156,12 @@ hr {
   background-color: rgb(253, 179, 170);
 }
 
+.task-less {
+  text-align: center;
+  font-size: 1.5rem;
+  color: crimson;
+}
+
 @media only screen and (min-width: 375px) and (max-width: 768px) {
   .wrapper {
     width: 100%;

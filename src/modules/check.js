@@ -17,7 +17,8 @@ export const clearer = () => {
       tasks.pop();
       store();
       slotFunction();
-      domTasks.innerHTML = '';
+      domTasks.innerHTML = 'No tasks to display at the moment. Please add some tasks...';
+    domTasks.classList.add('task-less')
     }
   } else {
     const filtered = tasks.filter((verify) => verify.completed === false);

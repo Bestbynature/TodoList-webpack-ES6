@@ -27,6 +27,7 @@ export const slotFunction = () => {
 
 export const displayTasks = () => {
   slotFunction()
+  domTasks.classList.remove('task-less')
   tasks.forEach((task, i) => {
     const taskPane = document.createElement('div');
     taskPane.className = 'task-pane';
@@ -128,13 +129,16 @@ window.addEventListener('keypress', (event) => {
 
 window.onload = () => {
   tasks = JSON.parse(localStorage.getItem('tasks'));
-  if (tasks) {
+  if ((tasks.length >= 1)) {
     tasks.forEach((fresh) => {
       fresh.completed = false;
     });
     displayTasks();
   } else {
     tasks = [];
+    domTasks.innerHTML = 'No tasks to display at the moment. Please add some tasks...';
+    domTasks.classList.add('task-less')
+    slotFunction()
   }
 };
 
@@ -148,7 +152,9 @@ export const displayTasksCaller = (gem, linedeco) => {
   } else if (gem.length === 0) {
     tasks = [];
     store();
-    domTasks.innerHTML = '';
+    domTasks.innerHTML = 'No tasks to display at the moment. Please add some tasks...';
+    domTasks.classList.add('task-less')
+    slotFunction()
   } else {
     tasks = gem.map((mapped, i) => ({
       description: `${mapped.description}`,
@@ -159,5 +165,3 @@ export const displayTasksCaller = (gem, linedeco) => {
     displayTasks();
   }
 };
-
-// export { addTask };
