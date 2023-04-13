@@ -1,10 +1,9 @@
-/* eslint-disable  import/no-cycle, import/no-mutable-exports, import/prefer-default-export */
-
-import {
-  tasks, todo, abnormal, domTasks, displayTasks,
-} from '../index.js';
+import { domTasks, todo, abnormal } from './local-storage.js';
+import displayTasks from './display.js';
 
 const addTask = () => {
+  const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
   if (todo.value) {
     const test = tasks.some((tested) => {
       if (tested.description.toLowerCase() === todo.value.toLowerCase()) return true;
@@ -29,7 +28,7 @@ const addTask = () => {
       tasks.push(task);
       todo.value = '';
       domTasks.innerHTML = '';
-      displayTasks();
+      displayTasks(tasks);
     }
   } else {
     abnormal.style.display = 'block';
@@ -37,5 +36,4 @@ const addTask = () => {
   }
 };
 
-export { addTask };
-// module.exports = addTask
+export default addTask;

@@ -1,18 +1,19 @@
-/* eslint-disable  import/no-cycle */
-
-import { displayTasksCaller, tasks } from '../index.js';
+import displayTasksCaller from '../dispcaller.js';
 
 let startId; let dropId;
 
-export function dragStart(a) {
+function dragStart(a) {
   startId = Number(a.target.id) - 1;
 }
 
-export function dragOver(b) {
+function dragOver(b) {
   b.preventDefault();
 }
 
-export function drop(c) {
+function drop(c) {
+  if (startId < 0) return;
+
+  const tasks = JSON.parse(localStorage.getItem('tasks'));
   dropId = Number(c.target.id) - 1;
   const insert = tasks[startId];
   if (startId > dropId) {
@@ -25,3 +26,5 @@ export function drop(c) {
   }
   displayTasksCaller(tasks);
 }
+
+export { dragStart, dragOver, drop };

@@ -1,9 +1,8 @@
-/* eslint-disable  import/no-cycle, import/no-mutable-exports */
-
-import { tasks, abnormal } from '../index.js';
-import store from './local-storage.js';
+import { store, abnormal } from './local-storage.js';
 
 const update = (item, number) => {
+  const tasks = JSON.parse(localStorage.getItem('tasks'));
+
   const test = tasks.some((tester) => {
     if (tester.description.toLowerCase() === item.toLowerCase()) return true;
     return false;
@@ -13,8 +12,8 @@ const update = (item, number) => {
     abnormal.innerHTML = 'Sorry! You can\'t add the same task twice';
   } else {
     abnormal.style.display = 'none';
-    tasks[number].description = item;
-    store();
+    tasks[number - 1].description = item;
+    store(tasks);
   }
 };
 

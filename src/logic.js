@@ -24,4 +24,12 @@ const maximum = (a) => {
   return a;
 };
 
-export default maximum;
+const slot = document.querySelector('header>p');
+
+const slotFunction = (a) => {
+  const maxima = maximum(a);
+  slot.innerHTML = '';
+  slot.innerHTML += `<span> ${a} of ${maxima} slots </span><meter optimum="${Math.floor(0.5 * maxima)}" high="${Math.floor(0.7 * maxima)}" max="${maxima}" value="${a}"></meter>`;
+};
+
+export default slotFunction;
