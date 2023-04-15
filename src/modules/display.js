@@ -52,9 +52,7 @@ const displayTasks = (arr) => {
     topRight.appendChild(anchor);
     leftRight.append(topLeft, topRight);
 
-    const ruler = document.createElement('hr');
-
-    taskPane.append(leftRight, ruler);
+    taskPane.append(leftRight);
 
     domTasks.appendChild(taskPane);
 

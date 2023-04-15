@@ -23,6 +23,7 @@
         
         </header>
         <main>
+            <p id="name"></p>
             <hr>
             <div class="form">
                 <input type="text" placeholder="Add to your list..." name="todo" class="todo">
@@ -36,6 +37,19 @@
             </div>
         </main>
     </div>
+    <section class="prompt">
+        <div class="name">Name: <input type="text" required placeholder="Please enter your name" id="username"></div>
+        
+        <hr>
+        <div class="message">
+            <p>Is this a new list or you want to continue the previously saved list? Please click the appropriate button below </p>
+        </div>
+        <div class="options">
+            <button type="button" id="btn1">continue</button>
+            <button type="button" id="btn2">fresh list</button>
+        </div>
+        <div class="warning"></div>
+    </section>
     
 </body>
 </html>

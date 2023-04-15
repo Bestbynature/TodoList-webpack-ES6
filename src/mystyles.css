@@ -19,6 +19,7 @@ body {
   padding: 3rem 1rem 3rem 1rem;
   width: 70%;
   height: auto;
+  display: none;
 }
 
 header {
@@ -87,10 +88,6 @@ header {
   background-color: #fff;
   display: flex;
   flex-direction: column;
-}
-
-hr {
-  width: 100%;
 }
 
 .description {
@@ -162,8 +159,250 @@ hr {
   color: crimson;
 }
 
-@media only screen and (min-width: 375px) and (max-width: 768px) {
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+.prompt {
+  border: 2px solid black;
+  padding: 2rem;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  margin-top: 25vh;
+  box-shadow: 3px 3px 3px 5px;
+}
+
+.message>p {
+  text-align: center;
+}
+
+.options {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 1rem;
+}
+
+.options>button {
+  padding: 1rem;
+  border-radius: 1.2rem;
+  border: none;
+  background-color: rgb(16, 226, 26);
+  font-size: 2rem;
+  cursor: pointer;
+  margin-top: 2rem;
+  transition: all 0.5s ease-in-out;
+}
+
+.options>button:hover {
+  background-color: rgb(5, 92, 9);
+  color: #fff;
+}
+
+.options>button:active {
+  filter: invert(70%);
+}
+
+#username {
+  padding: 0.8rem;
+  border-radius: 10px;
+  font-size: 2rem;
+  border: none;
+  margin-left: 1rem;
+  width: 75%;
+}
+
+#username:focus {
+  outline: none;
+  box-shadow: 0 0 3px 4px gray;
+}
+
+hr {
+  width: 100%;
+}
+
+.name {
+  margin-bottom: 2rem;
+}
+
+#name {
+  padding: 0.7rem;
+  font-size: 1.5rem;
+  background-color: #d8d2d2;
+
+}
+
+.warning {
+  color: crimson;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+@media only screen and (max-width: 1200px){
+  #username {
+    width: 65%;
+    font-size: 1.1rem;
+
+  }
+}
+
+@media only screen and (max-width: 900px){
+  #username {
+    width: 70%;
+    margin-left: 0.5rem;
+  }
+
+  .prompt {
+    font-size: 1.5rem;
+  }
+
+  .options>button {
+    padding: 1rem;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+  }
+}
+
+
+@media only screen and (max-width: 820px) {
+  #username {
+    width: 60%;
+    font-size: 1.1rem;
+    width: 70%;
+  }
+
+  .prompt {
+    font-size: 1.3rem;
+  }
+
+  .name {
+    font-size: 1rem;
+  }
+
+}
+
+@media only screen and (max-width: 768px) {
   .wrapper {
     width: 100%;
+  }
+}
+
+@media only screen and (max-width: 730px) {
+  .prompt {
+    padding: 1rem;
+  }
+}
+
+@media only screen and (max-width: 670px) {
+ .prompt {
+  font-size: 1.1rem;
+ }
+
+ #username {
+  font-size: 0.9rem;
+ }
+
+ .options {
+  justify-content: space-between;
+ }
+
+ .options>button {
+  padding: .6rem;
+  border-radius: .6rem;
+  font-size: 1.3rem;
+  margin-top: 1rem;
+}
+}
+
+@media only screen and (max-width: 580px) {
+  .prompt {
+    font-size: 0.8rem;
+   }
+
+   .name {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  #username {
+    font-size: 0.8rem;
+  }
+
+  .options>button {
+    padding: .4rem;
+    border-radius: .4rem;
+    font-size: 1rem;
+    margin-top: .4rem;
+  }
+
+}
+
+@media only screen and (max-width: 490px) {
+  .prompt {
+    font-size: 0.6rem;
+    padding: 0.5rem;
+   }
+
+   #username {
+    font-size: 0.6rem;
+    padding: 0.5rem;
+  }
+
+  .name {
+    font-size: 0.6rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .options>button {
+    padding: .3rem;
+    font-size: 0.7rem;
+    margin-top: .2rem;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  #username {
+    border-radius: 5px;
+    font-size: 0.45rem;
+  }
+
+  .name {
+    margin-bottom: 0.4rem;
+    font-size: 0.5rem;
+  }
+
+  .prompt {
+    font-size: 0.5rem;
+    padding: 0.5rem;
+   }
+
+   .options>button {
+    padding: .2rem;
+    font-size: 0.5rem;
+    border-radius: 0.2rem;
+    margin-top: 0;
+  }
+}
+
+@media only screen and (max-width: 287px) {
+  #username {
+    width: 60%;
+    border-radius: 3px;
+    font-size: 0.35rem;
+    padding: 0.3rem;
+  }
+
+  .options {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .options>button {
+    margin-bottom: 7px;
   }
 }
