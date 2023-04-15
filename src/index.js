@@ -11,14 +11,17 @@ import update from './modules/update.js';
 
 const addButton = document.querySelector('.fa-arrow-right-to-bracket');
 const clear = document.querySelector('.clear');
-const wrapper = document.querySelector('.wrapper')
-const section2 = document.querySelector('.prompt')
-const btn1 = document.querySelector('#btn1')
-const btn2 = document.querySelector('#btn2')
-const name = document.querySelector('#name')
-const username = document.querySelector('#username')
-const warning = document.querySelector('.warning')
-
+const wrapper = document.querySelector('.wrapper');
+const section2 = document.querySelector('.prompt');
+const btn1 = document.querySelector('#btn1');
+const btn2 = document.querySelector('#btn2');
+const btn3 = document.querySelector('#btn3');
+const name = document.querySelector('#name');
+const username = document.querySelector('#username');
+const warning = document.querySelector('.warning');
+const warning2 = document.querySelector('.warning2');
+const initialMax = document.querySelector('.initial-max');
+const userNumber = document.querySelector('#user-number');
 
 addButton.addEventListener('click', addTask);
 clear.addEventListener('click', clearer);
@@ -49,7 +52,7 @@ window.addEventListener('keypress', (event) => {
 });
 
 const yes = (a) => {
-  name.innerHTML = `Welcome Back ${a}!`
+  name.innerHTML = `Welcome Back ${a}!`;
   const tasks = JSON.parse(localStorage.getItem('tasks'));
   if ((tasks.length > 0)) {
     tasks.forEach((fresh) => {
@@ -61,35 +64,42 @@ const yes = (a) => {
     domTasks.classList.add('task-less');
     slotFunction(0);
   }
-}
+};
 
-btn1.addEventListener('click', ()=>{
-  if(username.value !== ''){
-  localStorage.setItem('name', JSON.stringify(username.value))
+btn1.addEventListener('click', () => {
+  if (username.value !== '') {
+    localStorage.setItem('name', JSON.stringify(username.value));
   }
   section2.classList.add('hidden');
   wrapper.style.display = 'block';
-  let b = JSON.parse(localStorage.getItem('name'))
+  const b = JSON.parse(localStorage.getItem('name'));
   yes(b);
-})
+});
 
-btn2.addEventListener('click', ()=>{
-  if(username.value !== ''){
-    localStorage.setItem('name', JSON.stringify(username.value))
+btn3.addEventListener('click', () => {
+  const number = userNumber.value;
+  if (number === '') {
+    warning2.innerHTML = '<p>Please enter a valid number</p>';
+    return;
+  }
+  initialMax.style.display = 'none';
+  wrapper.style.display = 'block';
+  name.innerHTML = `Welcome ${JSON.parse(localStorage.getItem('name'))}!`;
+  domTasks.innerHTML = 'No tasks to display at the moment. Please add some tasks...';
+  domTasks.classList.add('task-less');
+  slotFunction(0, number);
+  localStorage.setItem('tasks', JSON.stringify([]));
+});
+
+btn2.addEventListener('click', () => {
+  if (username.value !== '') {
+    localStorage.setItem('name', JSON.stringify(username.value));
     warning.innerHTML = '';
-    }else{
-     warning.innerHTML = `<p>Please enter a name for the new list</p>`
-      return
-    }
- let number;
- while(isNaN(number)){
-  number = prompt('Please note that this will erase the previously saved tasks. Kindly enter the initial Maximum slots you would need. This can still be increased later')
- }
- name.innerHTML = `Welcome ${JSON.parse(localStorage.getItem('name'))}!`
- domTasks.innerHTML = 'No tasks to display at the moment. Please add some tasks...';
-    domTasks.classList.add('task-less');
- slotFunction(0, number)
- section2.classList.add('hidden');
- localStorage.setItem('tasks', JSON.stringify([]))
- wrapper.style.display = 'block';
-})
+    section2.classList.add('hidden');
+    wrapper.style.display = 'none';
+    initialMax.style.display = 'flex';
+    initialMax.scrollIntoView({ behavior: 'smooth' });
+  } else {
+    warning.innerHTML = '<p>Please enter a name for the new list</p>';
+  }
+});

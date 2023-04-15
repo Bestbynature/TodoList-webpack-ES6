@@ -176,7 +176,7 @@ header {
   box-shadow: 3px 3px 3px 5px;
 }
 
-.message>p {
+.message > p {
   text-align: center;
 }
 
@@ -187,7 +187,7 @@ header {
   padding: 1rem;
 }
 
-.options>button {
+.options > button {
   padding: 1rem;
   border-radius: 1.2rem;
   border: none;
@@ -198,16 +198,17 @@ header {
   transition: all 0.5s ease-in-out;
 }
 
-.options>button:hover {
+.options > button:hover {
   background-color: rgb(5, 92, 9);
   color: #fff;
 }
 
-.options>button:active {
+.options > button:active {
   filter: invert(70%);
 }
 
-#username {
+#username,
+#user-number {
   padding: 0.8rem;
   border-radius: 10px;
   font-size: 2rem;
@@ -216,7 +217,8 @@ header {
   width: 75%;
 }
 
-#username:focus {
+#username:focus,
+#user-number:focus {
   outline: none;
   box-shadow: 0 0 3px 4px gray;
 }
@@ -233,24 +235,40 @@ hr {
   padding: 0.7rem;
   font-size: 1.5rem;
   background-color: #d8d2d2;
-
 }
 
-.warning {
+.warning,
+.warning2 {
   color: crimson;
   font-size: 1.5rem;
   text-align: center;
 }
 
-@media only screen and (max-width: 1200px){
+.initial-max {
+  display: none;
+  border: 2px solid black;
+  padding: 2rem;
+  font-size: 2rem;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  box-shadow: 3px 3px 3px 5px;
+  position: absolute;
+  top: 20vh;
+}
+
+.number {
+  margin-top: 1rem;
+}
+
+@media only screen and (max-width: 1200px) {
   #username {
     width: 65%;
     font-size: 1.1rem;
-
   }
 }
 
-@media only screen and (max-width: 900px){
+@media only screen and (max-width: 900px) {
   #username {
     width: 70%;
     margin-left: 0.5rem;
@@ -260,7 +278,7 @@ hr {
     font-size: 1.5rem;
   }
 
-  .options>button {
+  .options > button {
     padding: 1rem;
     border-radius: 1rem;
     font-size: 1.5rem;
@@ -268,12 +286,9 @@ hr {
   }
 }
 
-
 @media only screen and (max-width: 820px) {
   #username {
-    width: 60%;
     font-size: 1.1rem;
-    width: 70%;
   }
 
   .prompt {
@@ -283,7 +298,6 @@ hr {
   .name {
     font-size: 1rem;
   }
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -299,32 +313,32 @@ hr {
 }
 
 @media only screen and (max-width: 670px) {
- .prompt {
-  font-size: 1.1rem;
- }
+  .prompt {
+    font-size: 1.1rem;
+  }
 
- #username {
-  font-size: 0.9rem;
- }
+  #username {
+    font-size: 0.9rem;
+  }
 
- .options {
-  justify-content: space-between;
- }
+  .options {
+    justify-content: space-between;
+  }
 
- .options>button {
-  padding: .6rem;
-  border-radius: .6rem;
-  font-size: 1.3rem;
-  margin-top: 1rem;
-}
+  .options > button {
+    padding: 0.6rem;
+    border-radius: 0.6rem;
+    font-size: 1.3rem;
+    margin-top: 1rem;
+  }
 }
 
 @media only screen and (max-width: 580px) {
   .prompt {
     font-size: 0.8rem;
-   }
+  }
 
-   .name {
+  .name {
     font-size: 0.8rem;
     margin-bottom: 1rem;
   }
@@ -333,22 +347,21 @@ hr {
     font-size: 0.8rem;
   }
 
-  .options>button {
-    padding: .4rem;
-    border-radius: .4rem;
+  .options > button {
+    padding: 0.4rem;
+    border-radius: 0.4rem;
     font-size: 1rem;
-    margin-top: .4rem;
+    margin-top: 0.4rem;
   }
-
 }
 
 @media only screen and (max-width: 490px) {
   .prompt {
     font-size: 0.6rem;
     padding: 0.5rem;
-   }
+  }
 
-   #username {
+  #username {
     font-size: 0.6rem;
     padding: 0.5rem;
   }
@@ -358,10 +371,10 @@ hr {
     margin-bottom: 0.8rem;
   }
 
-  .options>button {
-    padding: .3rem;
+  .options > button {
+    padding: 0.3rem;
     font-size: 0.7rem;
-    margin-top: .2rem;
+    margin-top: 0.2rem;
   }
 }
 
@@ -379,10 +392,10 @@ hr {
   .prompt {
     font-size: 0.5rem;
     padding: 0.5rem;
-   }
+  }
 
-   .options>button {
-    padding: .2rem;
+  .options > button {
+    padding: 0.2rem;
     font-size: 0.5rem;
     border-radius: 0.2rem;
     margin-top: 0;
@@ -402,7 +415,7 @@ hr {
     padding: 0;
   }
 
-  .options>button {
+  .options > button {
     margin-bottom: 7px;
   }
 }
