@@ -23,6 +23,7 @@
         
         </header>
         <main>
+            <p id="name"></p>
             <hr>
             <div class="form">
                 <input type="text" placeholder="Add to your list..." name="todo" class="todo">
@@ -36,6 +37,30 @@
             </div>
         </main>
     </div>
+    <section class="prompt">
+        <div class="name">Name: <input type="text" required placeholder="Please enter your name" id="username"></div>
+        
+        <hr>
+        <div class="message">
+            <p>Is this a new list or you want to continue the previously saved list? Please click the appropriate button below </p>
+        </div>
+        <div class="options">
+            <button type="button" id="btn1">continue</button>
+            <button type="button" id="btn2">fresh list</button>
+        </div>
+        <div class="warning"></div>
+    </section>
+    <section class="initial-max">
+        <div class="message">
+            <p>Please note that this will erase the previously saved tasks. Kindly enter the initial Maximum slots you would need. This can still be increased later</p>
+        </div>
+        <hr>
+        <div class="number">Slots<input type="number" required placeholder="for example: 7" id="user-number"></div>
+        <div class="options">
+            <button type="button" id="btn3">START</button>
+        </div>
+        <div class="warning2"></div>
+    </section>
     
 </body>
 </html>
