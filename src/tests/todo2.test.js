@@ -6,7 +6,7 @@ test('sample testing of jest', () => {
   expect(1).toBe(1);
 });
 
-describe('Testing the fnction that edit, update and clear', () => {
+describe('Testing the function that edit, update and clear', () => {
   test('testing the update of desccription', () => {
     expect(edupclear.update('going to the Supermarket')).toStrictEqual([
       {

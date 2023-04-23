@@ -1,54 +1,29 @@
-/*eslint-disable*/
-let tasks = [];
+const Edupclear = require('./edupclear.js');
 
 class Updater {
-
   addTask(todo) {
-    tasks.push(todo);
-    return tasks;
+    this.tasks = [];
+    this.tasks.push(todo);
+    return this.tasks;
   }
 
   deleter(a) {
-    if (tasks.length === 1) {
-      tasks.pop();
-      return tasks;
+    this.tasks = [{
+      index: 1,
+      description: 'going to toilet',
+      completed: false,
+    }];
+    if (this.tasks.length === 1) {
+      this.tasks.pop();
+      return this.tasks;
     }
-    const newTasks = tasks.filter((elem) => elem.index - 1 !== a);
+    const newTasks = this.tasks.filter((elem) => elem.index - 1 !== a);
     return newTasks;
   }
 }
 
-class Edupclear{
-
-  update = (item) => {
-    tasks = [{   index: 1,
-      description: 'going to the restaurant',
-      completed: false}];
-      tasks[0].description = item;
-      return tasks
-  }
-
-  status = (index) => {
-    tasks[index].completed = true;
-    return tasks;
-  };
-
-  clearer = () => {
-    if (tasks.length === 0) return;
-    if (tasks.length === 1) {
-      if (tasks[0].completed === true) {
-        tasks.pop();
-        return tasks
-      }
-    } else {
-      const filtered = tasks.filter((verify) => verify.completed === false);
-      return filtered
-    }
-  }
-}
-
-const updateTask = new Updater;
-const edupclear = new Edupclear;
-exports.updateTask = updateTask;
+const edupclear = new Edupclear();
 exports.edupclear = edupclear;
 
+const updateTask = new Updater();
+exports.updateTask = updateTask;

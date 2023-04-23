@@ -20,10 +20,6 @@ describe('Methods for adding and deleting a task', () => {
   });
 
   test('deleting a task', () => {
-    expect(updateTask.deleter({
-      index: 1,
-      description: 'going to toilet',
-      completed: false,
-    })).toStrictEqual([]);
+    expect(updateTask.deleter(1)).toStrictEqual([]);
   });
 });
